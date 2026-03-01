@@ -3,10 +3,10 @@ import os
 
 
 
-# 1. 确保在当前目录创建 emb_data 文件夹
+# 1. Make sure to create the "emb_data" folder in the current directory.
 os.makedirs('emb_data', exist_ok=True)
 
-# 2. 制造 1KB 的合法空字典假文件
+# 2. Create a 1KB dummy file of an empty dictionary
 dummy_data = {}
 files_to_mock = ['topic_data.npy', 'user_data.npy', 'post_data.npy']
 
@@ -15,9 +15,10 @@ for file_name in files_to_mock:
     np.save(file_path, dummy_data)
     
 
-# 3. 顺手建几个空文件夹，防止程序检测目录时报错
+# 3. Create several empty folders to prevent the program from generating errors when it detects the directory.
 empty_folders = ['topic_data', 'user_data', 'post_data', 'raw_data']
 for folder in empty_folders:
     os.makedirs(folder, exist_ok=True)
     
+
 
