@@ -1,6 +1,6 @@
 # SoMe Benchmark Reproduction: Misinformation Detection (MID) Task
 
-This repository contains my reproducibility work for the FTEC5660 Agentic AI course. I reproduced the Misinformation Detection (MID) task from the [SoMe Benchmark](https://github.com/LivXue/SoMe) and introduced an anti-hallucination prompt to mitigate tool-use hallucinations.
+This repository contains the Misinformation Detection (MID) task from the [SoMe Benchmark](https://github.com/LivXue/SoMe) and introduced an anti-hallucination prompt to mitigate tool-use hallucinations.
 
 ## 🛠️ Modifications Made
 - **Model Swapped**: Replaced the default Llama model with `qwen2.5-7b-instruct` via Alibaba Cloud DashScope API.
