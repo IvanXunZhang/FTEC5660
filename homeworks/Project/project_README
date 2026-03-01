@@ -29,14 +29,15 @@ After downloading, unzip the data into the database directory.
 
 4.use the make_dummy.py to reduce the database file from 50GB to a few dozen MB.
 
-5.Set up API Key:
+5.Set up API Key
 
-#🚀 How to Run (Run Steps)
-1. Run the Baseline Model (With Tool Error):
+
+6.🚀 How to Run (Run Steps)
+6.1 Run the Baseline Model (With Tool Error):
 To measure the hallucination rate without the anti-hallucination prompt, run
-2. Run the Modified Model (Anti-Hallucination Policy):
+6.2 Run the Modified Model (Anti-Hallucination Policy):
 To see how the strict rules suppress hallucination, run
 
-#📊 Evaluation
+7.📊 Evaluation
 I have written a custom robust evaluation code to calculate the Task Completion Rate (TCR) and Accuracy accurately.
 
