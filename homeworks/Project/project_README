@@ -1,0 +1,42 @@
+# SoMe Benchmark Reproduction: Misinformation Detection (MID) Task
+
+This repository contains my reproducibility work for the FTEC5660 Agentic AI course. I reproduced the Misinformation Detection (MID) task from the [SoMe Benchmark](https://github.com/LivXue/SoMe) and introduced an anti-hallucination prompt to mitigate tool-use hallucinations.
+
+## 🛠️ Modifications Made
+- **Model Swapped**: Replaced the default Llama model with `qwen2.5-7b-instruct` via Alibaba Cloud DashScope API.
+- **Data Pruning**: Bypassed the ~50GB `.npy` database loading by creating dummy files, reducing memory usage to a few megabytes to prevent OOM errors in Google Colab.
+- **Bug Fixes**: Fixed `ModuleNotFoundError` by correctly routing the HTTP requests, and resolved an infinite loop caused by hidden `FileNotFoundError` exceptions by adding robust `os.makedirs` logic.
+- **Anti-Hallucination Policy**: Injected strictly scoped rules (`NO RETRIES` and `NO GUESSING`) into the agent's system prompt to force it to acknowledge database errors rather than hallucinating answers.
+
+## ⚙️ Installation (Install Steps)
+
+1. **Clone the repository**
+
+git clone https://github.com/LivXue/SoMe.git
+cd SoMe
+
+2. **Install dependencies**
+
+pip install -r requirements.txt
+
+3. **Download test data**
+
+Hugging Face Dataset: https://huggingface.co/datasets/LivXue/SoMe
+Google Drive: https://drive.google.com/file/d/1sD2EaZStK5nODQWlJTHZ8WfFb5QHgwMN/view?usp=drive_link
+Baidu Disk: https://pan.baidu.com/s/1DugTyLR5AaQHeOdXG6wqQQ?pwd=SoMe (Password: SoMe)
+
+After downloading, unzip the data into the database directory.
+
+4.use the make_dummy.py to reduce the database file from 50GB to a few dozen MB.
+
+5.Set up API Key:
+
+#🚀 How to Run (Run Steps)
+1. Run the Baseline Model (With Tool Error):
+To measure the hallucination rate without the anti-hallucination prompt, run
+2. Run the Modified Model (Anti-Hallucination Policy):
+To see how the strict rules suppress hallucination, run
+
+#📊 Evaluation
+I have written a custom robust evaluation code to calculate the Task Completion Rate (TCR) and Accuracy accurately.
+
